@@ -1,4 +1,4 @@
 havash
 ======
 
-Password Hashing Function in PHP
+Simple Password Hashing Function in PHP
