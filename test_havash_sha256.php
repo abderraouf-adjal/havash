@@ -4,7 +4,7 @@ require_once('havash.php');
 
 
 /* Make the hash and the salt (return array[Hash hex, Salt]) */
-$hash_and_salt = havash_hash('sha256', 'GPp7jd6zJ2QJBJR8');
+$hash_and_salt = havash_hash('GPp7jd6zJ2QJBJR8');
 
 
 $passwd_hash = $hash_and_salt[0];
@@ -12,7 +12,7 @@ $salt = $hash_and_salt[1];
 
 
 /* Check the password */
-$havash_check_return = havash_check('sha256', 'GPp7jd6zJ2QJBJR8', $passwd_hash, $salt);
+$havash_check_return = havash_check('GPp7jd6zJ2QJBJR8', $passwd_hash, $salt);
 
 if ($havash_check_return === true) {
 	echo 'Same password'.PHP_EOL;

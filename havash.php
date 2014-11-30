@@ -1,7 +1,7 @@
 <?php
 
 /*
- * havash version 0.1.0
+ * havash version 0.1.1
  *
  * The MIT License (MIT)
  * Copyright (c) 2014 Abderraouf Adjal
@@ -67,7 +67,7 @@ function mk_rand_salt($len)
  *     (-2): Invalid $repeats value ($repeats < 0)
  */
  
-function havash_hash($hash_func, $passwd, $repeats = 10000)
+function havash_hash($passwd, $hash_func = 'sha256', $repeats = 10000)
 {
 	$random_bytes_len = 32;
 	$salt_hash_func = 'sha256';
@@ -105,7 +105,7 @@ function havash_hash($hash_func, $passwd, $repeats = 10000)
  *     (-2): Invalid $repeats value ($repeats < 0)
  */
 
-function havash_check($hash_func, $passwd, $passwd_hash, $salt, $repeats = 10000)
+function havash_check($passwd, $passwd_hash, $salt, $hash_func = 'sha256', $repeats = 10000)
 {
 	if ($repeats < 0) {
 		echo 'havash_check(): Invalid $repeats value ($repeats < 0)'.PHP_EOL;
