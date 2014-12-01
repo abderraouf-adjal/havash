@@ -9,3 +9,7 @@ Simple Password Hashing Function in PHP
 	and against pre-computed rainbow table attacks.
 * Slowing brute-force attacks (Configurable).
 * Safe against length extension attacks.
+
+---
+
+Use [Scrypt](http://wikipedia.org/wiki/Scrypt).

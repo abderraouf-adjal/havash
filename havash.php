@@ -70,20 +70,19 @@ function mk_rand_salt($len)
 function havash_hash($passwd, $hash_func = 'sha256', $repeats = 10000)
 {
 	$random_bytes_len = 32;
-	$salt_hash_func = 'sha256';
 	
 	if ($repeats < 0) {
 		echo 'havash_hash(): Invalid $repeats value ($repeats < 0)'.PHP_EOL;
 		return -2;
 	}
 	
-	$random_bytes = mk_rand_salt($random_bytes_len);
-	if ($random_bytes < 0) {
+	$salt = mk_rand_salt($random_bytes_len);
+	if ($salt < 0) {
 		echo 'havash_hash(): Fail to make random bytes for salt.'.PHP_EOL;
 		return -1;
 	}
 	else {
-		$salt = hash($salt_hash_func, $random_bytes);
+		$salt = bin2hex($salt);
 	}
 	
 	$h = hash_hmac($hash_func, $salt, $passwd, true);
