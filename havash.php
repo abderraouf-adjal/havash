@@ -117,7 +117,21 @@ function havash_check($passwd, $passwd_hash, $salt, $hash_func = 'sha256', $repe
 		$h = hash_hmac($hash_func, $h, $passwd, true);
 	}
 	
-	return (bin2hex($h) === strtolower($passwd_hash));
+	$h = bin2hex($h);
+	$passwd_hash = strtolower($passwd_hash);
+	
+	if (strlen($passwd_hash) !== strlen($h))
+	{
+		return false;
+	}
+	
+	if (function_exists('hash_equals')) {
+		/* hash_equals: Timing attack safe string comparison */
+		return hash_equals($passwd_hash, $h);
+	}
+	else {
+		return ($passwd_hash === $h);
+	}
 }
 
 
