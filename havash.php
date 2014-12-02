@@ -1,7 +1,7 @@
 <?php
 
 /*
- * havash version 0.1.1
+ * havash version 0.1.2
  *
  * The MIT License (MIT)
  * Copyright (c) 2014 Abderraouf Adjal
