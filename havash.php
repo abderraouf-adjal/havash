@@ -76,7 +76,7 @@ function havash_hash($passwd, $hash_func = 'sha256', $repeats = 2000)
 		return -2;
 	}
 	
-	$salt = mk_rand_salt($random_bytes_len);
+	$salt = mk_rand_salt($random_bytes_len); /* You can use any CSPRNG (cryptographically secure pseudo-random number generator) */
 	if ($salt < 0) {
 		echo 'havash_hash(): Fail to make random bytes for salt.'.PHP_EOL;
 		return -1;
