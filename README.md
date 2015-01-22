@@ -12,4 +12,4 @@ Simple Password Hashing Function in PHP
 
 ---
 
-Use [Scrypt](http://wikipedia.org/wiki/Scrypt).
+Using [Scrypt](https://wikipedia.org/wiki/Scrypt) or [PBKDF2](https://wikipedia.org/wiki/PBKDF2) is recommended.

@@ -67,7 +67,7 @@ function mk_rand_salt($len)
  *     (-2): Invalid $repeats value ($repeats < 0)
  */
  
-function havash_hash($passwd, $hash_func = 'sha256', $repeats = 10000)
+function havash_hash($passwd, $hash_func = 'sha256', $repeats = 2000)
 {
 	$random_bytes_len = 32;
 	
@@ -104,7 +104,7 @@ function havash_hash($passwd, $hash_func = 'sha256', $repeats = 10000)
  *     (-2): Invalid $repeats value ($repeats < 0)
  */
 
-function havash_check($passwd, $passwd_hash, $salt, $hash_func = 'sha256', $repeats = 10000)
+function havash_check($passwd, $passwd_hash, $salt, $hash_func = 'sha256', $repeats = 2000)
 {
 	if ($repeats < 0) {
 		echo 'havash_check(): Invalid $repeats value ($repeats < 0)'.PHP_EOL;
